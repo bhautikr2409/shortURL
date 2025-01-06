@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>URL shortener</h1>
+
+   <% if (locals.id) { %>
+        <p>URL generate : http://localhost:6001/url/<%= id %></p>
+   <% } %>
+
+   <div>
+    <form method="post" action="/url">
+        <label for="">enter url</label>
+        <input type="text" name="url" placeholder="https://example.com">
+        <button type="submit">generate</button>
+    </form>
+   </div>
+
+   <div>
+        <% if (locals.urls) { %>
+            <table>
+                <thead>
+                    <th>sr. no</th>
+                    <th>shortid</th>
+                    <th>redirect</th>
+                    <th>clicks</th>
+                </thead>
+                <tbody>
+                    <% urls.forEach((url , index) => { %>
+                        <tr>
+                            <td><% index + 1 %></td>
+                            <td><% url.shortid %></td>
+                            <td><% ulr.redirectURL %></td>
+                            <td><% url.visitHistory.length %></td>
+                        </tr>                       
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } %>
+   </div>
+</body>
+</html>
