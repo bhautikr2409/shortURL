@@ -18,9 +18,10 @@ app.set('views' , path.resolve("./views"))
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+
+
 app.use("/url" , urlRoute)
 app.use('/',staicRoute)
-
 
 
 app.get("/:shortId",async (req , res) => {  

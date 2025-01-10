@@ -9,7 +9,7 @@
    <h1>URL shortener</h1>
 
    <% if (locals.id) { %>
-        <p>URL generate : http://localhost:6001/url/<%= id %></p>
+        <p>URL generate : http://localhost:6001/<%= id %></p>
    <% } %>
 
    <div>
@@ -34,7 +34,7 @@
                         <tr>
                             <td><% index + 1 %></td>
                             <td><% url.shortid %></td>
-                            <td><% ulr.redirectURL %></td>
+                            <td><% url.redirectURL %></td>
                             <td><% url.visitHistory.length %></td>
                         </tr>                       
                     <% }) %>
@@ -42,5 +42,6 @@
             </table>
         <% } %>
    </div>
+
 </body>
 </html>
